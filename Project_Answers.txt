@@ -1,0 +1,81 @@
+			     EE 109  - Fall 2023
+				  Thermostat
+
+
+Review Question 1 (Cost Analysis):
+
+Assume we are building 1000 units of this system.  Use the provided part
+numbers (see the webpage) and the digikey.com or jameco.com website to find the
+total **cost per unit** (again assume we build a quantity of 1000 units) for
+these thermostats.  Itemize the part costs (list each part and its unit cost
+when bought in units of 1000) and then show the final cost per unit below.
+Note: You only need to price the components used in the project (not all the
+components in your lab kit.  Also, you do not need to account for the cost of
+the circuit board or wires. In a real environment we would manufacture a PCB
+(Printed Circuit Board). As an optional task, you can search online for PCB
+manufacturers and what the costs and options are in creating a PCB.
+
+Microcontroller (ardunio):  $25 each, 1000 would be $23,355.00
+Microcontroller (Beetle Microcontroller): $6.28 each, 1000 units: $6,997.20
+LCD Display: $4.95, each, 1000 units: $4,250.00
+Servo Motor: $4.45 each, 1000 units: $3,861.00
+DS18B20: $5.95 each, 1000 units: $4,490.00
+Buzzer: $1.75 each, 1000 units: $1,190.00
+Rotary Encoder: $1.62 each, 1000 units: $1,620.00
+LED: $0.39 each, 1000 units: $220.00
+Buttons (x2): $0.29 each, 1000 units: $150.00
+Resistors (x4): $0.20 for 4, 1000 units (4000 resistors): $60.00
+
+Total price for 1000 units using arudino: $39,196
+
+Total price for 1000 units using smaller microcontroller: $22,838.20
+The reason I included the cheaper option is because the software and pin usage could be minized allowing for a cheaper and more efficient and compact
+thermostat.
+
+Review Question 2 (Health/Safety/Reliability)
+
+Assume this system was to be sold to consumers for use at their home.
+
+Considering reliability, health, and safety...
+
+ - What scenarios might you suggest testing (considering both HW and SW) 
+    before releasing the product for use? 
+
+   Specifically for software, we should test edge cases to see how the thermostat
+   would perform under extreme temperatures. The thermostat should be tested under
+   an extended period of time as well to see if it crashes or if thep performance
+   degrades. For hardware, I would test the relability of the circuits staying in tact.
+   When I put my ardunio in my kit, at least one wire would get unplugged. So I would
+   put a strong case around the wires and boards. I would also test the durability of the
+   buttons and rotary encoders because they are repetitvely used. For both, I would do 
+   security testing to make sure that values can't be falsely changed. I would test to see
+   that when the rotary encoder modifies the servo motor that it switches back to the original
+   temperature afterwards as well. That is a place where an error could occur.
+
+
+ - How might you make your design more reliable? By reliability we don't just
+   mean keeping it running correctly (though you should consider that), but
+   also how you can detect that a connected component has failed to gracefully
+   handle such situations.  You can consider both HW and SW points of failure,
+   issues related to the operational environment, etc. and how to mitigate
+   those cases.
+
+   In terms of hardware, I would probably fix the wiring and make it more in tact because
+   it seemed to be all over the place and loose. Also, I would use multiple sensors for specific measurements
+   to make sure that if one sensor fails, the other can take over. 
+
+   For the software, I would simulate a power outage to see if the EEPROM saves the data
+   from before. I would also design firmware to make sure data isn't being corrupted and that
+   the data is consistent. 
+
+   When a certain system has failed, I would print alerts to the LCD to let the user know. With a larger
+   LCD to I would be able to give instructions on how to fix certain issues. For those issues as well I would
+   stimulate tests, so that I am aware of certain issues that can occur such as extreme temperatures, damaged censors,
+   incorrect/inconsistent values, etc.
+
+
+
+
+
+
+
